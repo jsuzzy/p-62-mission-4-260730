@@ -1,0 +1,24 @@
+package com.back.p62mission1260730;
+
+import com.back.p62mission1260730.question.QuestionService;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class P62Mission1260730ApplicationTests {
+
+	@Autowired
+	private QuestionService questionService;
+
+	@Test
+	void testJpa() {
+		for(int i = 0; i <= 300; i++){
+			String subject = String.format("테스트 데이터입니다:[%03d]",i);
+			String content = "내용무";
+			this.questionService.create(subject, content, null);
+		}
+	}
+	}
+
+
